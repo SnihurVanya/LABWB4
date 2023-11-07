@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Розширений пошук Google</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .search-box {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            width: 60%;
+            margin: 0 auto;
+        }
+        .search-button {
+            text-align: center;
+            padding: 10px;
+            background-color: #4285f4; 
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-button:hover {
+            background-color: #3579dc; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Розширений пошук Google</h1>
+        <a href="index.html">Пошук Google</a>
+        <a href="image-search.html">Пошук зображень</a>
+    </header>
+    <div class="search-box">
+        <input type="text" id="all-words" placeholder="Знайти сторінки із... «усіма цими словами»">
+        <input type="text" id="exact-phrase" placeholder="Знайти сторінки з... «саме цим словом або фразою»">
+        <input type="text" id="any-words" placeholder="Знайти сторінки з... «будь-яким із цих слів»">
+        <input type="text" id="none-words" placeholder="Знайти сторінки з... «жодне з цих слів»">
+        <form action="https://www.google.com/search" method="GET">
+        <button class="search-button" onclick="performAdvancedSearch()">Розширений пошук</button>
+        </form>
+    </div>
+    <script>
+        function performAdvancedSearch() {
+
+            var allWords = document.getElementById("all-words").value;
+            var exactPhrase = document.getElementById("exact-phrase").value;
+            var anyWords = document.getElementById("any-words").value;
+            var noneWords = document.getElementById("none-words").value;
+            
+        }
+    </script>
+    
+</body>
+</html>

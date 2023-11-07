@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пошук Google</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .search-box {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            width: 60%;
+            margin: 0 auto;
+        }
+        .search-button {
+            text-align: center;
+            padding: 10px;
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-button:hover {
+            background-color: #3579dc; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Пошук Google</h1>
+        <a href="image-search.html">Пошук зображень</a>
+        <a href="advanced-search.html">Розширений пошук</a>
+    </header>
+    <div class="search-box">
+        <input type="text" id="search-input" placeholder="Введіть текст для пошуку" />
+        <form action="https://www.google.com/search" method="GET" id="search-form">
+            <input type="hidden" name="q" value="">
+            <button type="submit" class="search-button" onclick="performSearch()">Пошук Google</button>
+        </form>
+        <a href="https://www.google.com/search?q=" id="lucky-button" class="search-button">Мені пощастить</a>
+    </div>
+    <script>
+        function performSearch() {
+            var searchQuery = document.getElementById("search-input").value;
+            var form = document.getElementById("search-form");
+            form.action = "https://www.google.com/search"; 
+            form.querySelector('input[name="q"]').value = searchQuery; 
+        }
+    </script>
+</body>
+</html>
